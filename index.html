@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이지원 포트폴리오</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/jquery.easypiechart.js"></script>
+    <script src="js/wow.min.js"></script>
+    
+    <script>
+    $(function(){
+        /*네비게이션 메뉴 각각 클릭하면 해당 위치로 스크롤*/
+        $(".m_about").click(function(e){
+           var at = $("#about").offset().top;
+          e.preventDefault();           $("html,body").animate({scrollTop:at},1500);
+       });
+        
+        $(".m_skill").click(function(e){
+           var at = $("#skill").offset().top;
+          e.preventDefault();           $("html,body").animate({scrollTop:at},1500);
+       });
+        
+        $(".m_portfolio").click(function(e){
+           var at = $("#portfolio").offset().top;
+          e.preventDefault();           $("html,body").animate({scrollTop:at},1500);
+       });
+        
+        $(".m_contact").click(function(e){
+           var at = $("#contact").offset().top;
+          e.preventDefault();           $("html,body").animate({scrollTop:at},1500);
+       });
+        $(".nav .nav_name h1 a").click(function(e){
+          e.preventDefault();           $("html,body").animate({scrollTop:0},1500);
+       });
+        
+        
+        $(".m_menu").click(function(){
+            $(".nav .nav_gnb ul li").slideToggle(500);
+            return false;
+        });
+        
+        /*wow.js 실행*/
+        new WOW().init();
+        
+        /*네비게이션 메뉴가 해당 컨텐츠에 가면 색이 바뀌고
+        파이차트가 스크롤 값에 따라 반응*/
+        $(window).scroll(function(){
+            var sct = $(window).scrollTop();
+            var skill_top = $("#skill").offset().top-800;
+            var about = $("#about").offset().top-100;
+            var skill = $("#skill").offset().top-100;
+            var portfolio = $("#portfolio").offset().top-100;
+            var contact = $("#contact").offset().top-100;
+            
+            
+            if (sct > skill_top) { 
+                $(".chart").easyPieChart({
+                    size:200,
+                    barColor:'#eee',
+                    trackColor:'#000',
+                    scaleColor: false,
+                    lineWidth:20,
+                    lineCap:'circle',
+                    animate:2500
+                }); 
+            }
+            
+            if(sct > about && sct < skill){
+                $(".m_about").css({"color":"orange","transition":"0.5s",})
+            } else {
+                $(".m_about").css({"color":"#000","transition":"0.5s" })
+            }
+            
+            if(sct > skill && sct < portfolio){
+                $(".m_skill").css({"color":"orange","transition":"0.5s"})
+            } else {
+                $(".m_skill").css({"color":"#000","transition":"0.5s"})
+            }
+            
+            if(sct > portfolio && sct < contact){
+                $(".m_portfolio").css({"color":"orange","transition":"0.5s"})
+            } else {
+                $(".m_portfolio").css({"color":"#000","transition":"0.5s"})
+            }
+            if(sct >= contact-800 && sct){
+                $(".m_contact").css({"color":"orange","transition":"0.5s"})
+                 $(".m_portfolio").css({"color":"#000","transition":"0.5s"})
+            } else {
+                $(".m_contact").css({"color":"#000","transition":"0.5s"})
+            }
+            
+             
+            /*마우스스크롤 한번하면 실행되는 스크립트*/
+            if($(this).scrollTop()>=10) {
+                $("header").css({"background":"#eee","transition":"0.3s"});
+                $(".container").css({"color":"black","transition":"0.3s"});
+                
+                $(".nav .nav_gnb ul li").css({"background":"#eee","transition":"0.3s"});
+                
+            /*기본 상태*/
+            } else {
+                $("header").css({"background":"none","transition":"0.3s"});
+                $(".container").css({"color":"white","transition":"0.3s"});
+                $(".container .m_about").css({"color":"white","transition":"0.3s"});
+                $(".container .m_skill").css({"color":"white","transition":"0.3s"});
+                $(".container .m_portfolio").css({"color":"white","transition":"0.3s"});
+                $(".container .m_contact").css({"color":"white","transition":"0.3s"});
+                
+                $(".nav .nav_gnb ul li").css({"background":"#02358c","transition":"0.3s"});
+    
+            }
+        });
+        
+       
+    });
+</script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="container">
+                <div class="nav">
+                    <div class="nav_name">
+                        <h1>
+                            <a href="#">LEEJIWON</a>
+                        </h1></div>
+                    <div class="nav_gnb">
+                        <ul>
+                            <li><a href="#" class="m_about">ABOUT</a></li>
+                            <li><a href="#" class="m_skill">SKILL</a></li>
+                            <li><a href="#" class="m_portfolio">PORTFOLIO</a></li>
+                            <li><a href="#" class="m_contact">CONTACT</a></li>
+                        </ul>
+                    </div>
+                    <div class="m_menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div id="main">
+             <h2>LEE JI WON</h2>
+             <h3>WEB PUBLISHER PORTPOLIO SITE</h3>
+        </div>
+        
+        <div id="about">
+            <div class="about_txt">
+                <div class="about_info">
+                    <h2>ABOUT</h2>
+                    <!--<h3 class="toptxt">나는 무슨무슨 사람입니다!</h3>
+                    <p class="subtxt">글자존나쓰기 ~~~ 나는 어떤사랑미고 어떤사람이며 어떤사람이고 어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤어떤어떠어떤</p>-->
+                    <h3 class="toptxt">NAME</h3>
+                    <p class="subtxt">이지원</p>
+                    <h3 class="toptxt">DATE OF BIRTH</h3>
+                    <p class="subtxt">1995.05.16</p>
+                    <h3 class="toptxt">EDUCATION</h3>
+                    <p class="subtxt">2012.03 수리고등학교</p>
+                    <p class="subtxt">2014.03 남서울대학교 멀티미디어학과</p>
+                    <h3 class="toptxt">TRAINING</h3>
+                    <p class="subtxt">2019.06 ~ 2019.11 방송정보국제교육원</p>
+                </div>
+                <div class="about_img wow fadeInRight">
+                    <img src="images/face.jpg" alt="내얼굴">
+                </div>
+            </div>
+        </div>
+        
+        <div id="skill">
+            <div class="skill_txt"><h2>SKILLS</h2></div>
+            <div class="skill_bar">
+                <ul>
+                    <li><div class="chart" data-percent="75"><span class="percent">75%</span></div>HTML5</li>
+                    <li><div class="chart" data-percent="75"><span class="percent">75%</span></div>CSS3</li>
+                    <li><div class="chart" data-percent="75"><span class="percent">75%</span></div>JAVASCRIPT</li>
+                    <li><div class="chart" data-percent="75"><span class="percent">75%</span></div>JQUERY</li>
+                    <li><div class="chart" data-percent="75"><span class="percent">75%</span></div>PHOTOSHOP</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="portfolio">
+            <div class="portfolio_txt"><h2>PORTPOLIO</h2></div>
+            <div class="portfolio_box">
+                <div class="portfolio_1">
+                    <div class="imgbox wow fadeInLeft">
+                        <img src="images/port3.png" alt="호텔홈페이지사진">
+                    </div>
+                    <div class="textbox wow fadeInUp">
+                        <div class="t_txt">
+                            <h3>
+                                RESPONSIVE WEB <br>
+                                JEONJU HANOK VILLAGE
+                            </h3>
+                        </div>
+                        <div class="s_txt">
+                            <p>전주한옥마을 페이지 제작</p>
+                        </div>
+                        <div class="more">
+                            <button>MORE</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio_2">
+                    <div class="imgbox wow fadeInRight">
+                        <img src="images/port2.png" alt="호텔홈페이지사진">
+                    </div>
+                     <div class="textbox wow fadeInUp">
+                        <div class="t_txt">
+                            <h3>
+                                BASIC WEB <br>
+                                TWOSOMEPLACE
+                            </h3>
+                        </div>
+                        <div class="s_txt">
+                            <p>투썸플레이스 홈페이지 리뉴얼 제작</p>
+                        </div>
+                        <div class="more">
+                            <button>MORE</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio_3">
+                    <div class="imgbox wow fadeInLeft">
+                        <img src="images/port3.png" alt="호텔홈페이지사진">
+                    </div>
+                    <div class="textbox wow fadeInUp">
+                        <div class="t_txt">
+                            <h3>
+                                RESPONSIVE WEB <br>
+                                PORTFOLIO
+                            </h3>
+                        </div>
+                        <div class="s_txt">
+                            <p>포트폴리오 페이지 제작</p>
+                        </div>
+                        <div class="more">
+                            <button>MORE</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio_4">
+                    <div class="imgbox wow fadeInRight">
+                        <img src="images/port1.png" alt="호텔홈페이지사진">
+                    </div>
+                    <div class="textbox wow fadeInUp">
+                        <div class="t_txt">
+                            <h3>
+                                RESPONSIVE WEB <br>
+                                HOTEL (TEAM PROJECT)
+                            </h3>
+                        </div>
+                        <div class="s_txt">
+                            <p>가상의 호텔 홈페이지 제작</p>
+                        </div>
+                        <div class="more">
+                            <button>MORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="contact">
+            <div class="contact_txt"><h2>CONTACT</h2></div>
+            <div class="contact_info">
+                <ul>
+                    <li>PHONE : 010 8558 6898</li>
+                    <li>E-MAIL : double_tip@naver.com</li>
+                    <li>INSTAGRAM : @nicetomeetyoujiwon</li>
+                    <li>제 포트폴리오 사이트에 와주셔서 감사합니다!</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

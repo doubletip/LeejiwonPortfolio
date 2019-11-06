@@ -1,0 +1,248 @@
+@charset "utf-8";
+body {font-family: 'Do Hyeon', sans-serif; height: 500px; background: #02358c;}
+
+#wrap {position: relative; width: 100%;}
+header {position: fixed; top: 0; left: 0; width: 100%; height: 50px; z-index: 10;}
+.container {position: relative; width: 60%; margin: 0 auto; color: white;}
+
+/*nav*/
+.nav {}
+.nav .nav_name {position: absolute; left: 0;}
+.nav .nav_name h1 {line-height: 50px;}
+.nav .nav_name h1 a {}
+
+.nav .nav_gnb {position: absolute; right: 0;}
+.nav .nav_gnb ul {}
+.nav .nav_gnb ul:after {display: block; clear: both; content:"";}
+.nav .nav_gnb ul li {float:left; padding-left: 50px;}
+.nav .nav_gnb ul li a {display: inline-block;  line-height: 50px;}
+.nav .nav_gnb ul li a:hover {color: orange !important;}
+.m_menu {display: none;}
+
+/*main*/
+#main {position: relative; width: 100%; margin: 0 auto; margin-top: 50px; padding-top: 350px; padding-bottom: 350px;}
+#main h2 {text-align: center; font-size: 72px; color: white;}
+#main h3 {text-align: center; font-size: 50px; color: white;}
+
+/*about*/
+#about {position: relative; width: 100%; margin: 0 auto; background: white; padding: 200px 0;}
+#about::after {display: block; clear: both; content:"";}
+.about_txt {width: 60%; margin: 0 auto;}
+.about_info {width: 50%; float:left;}
+.about_info h2 {font-size: 50px;}
+.about_info .toptxt {font-size: 22px; margin-top: 20px;}
+.about_info .subtxt {font-size: 18px; width: 90%;}
+.about_img {width: 50%; float:left;}
+
+/*skill*/
+#skill {position: relative; width: 100%; margin: 0 auto; padding: 100px 0; color: white;}
+.skill_txt {text-align: center; padding: 20px 0;}
+.skill_txt h2 {font-size: 50px;}
+.skill_bar {width: 80%; margin: 0 auto; text-align: center; margin-top: 80px;}
+.skill_bar ul {margin: 0 auto;}
+.skill_bar ul:after {display: block; clear: both; content:"";}
+.skill_bar ul li {float:left; width: 20%; color: white; font-size: 26px; line-height: 50px;}
+.skill_bar ul li .chart {position: relative;}
+.skill_bar ul li .chart .percent {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); font-size: 40px;}
+
+/*portfolio*/
+#portfolio {position: relative; width: 100%; margin: 0 auto; background: white; padding-top: 200px;}
+.portfolio_txt {text-align: center; padding: 20px 0;}
+.portfolio_txt h2 {font-size: 50px;}
+.portfolio_box {position: relative; width: 80%; margin: 0 auto;}
+.portfolio_1 {height: 700px; margin-top: 150px;}
+.portfolio_1::after {display: block; content:""; clear: both;}
+.portfolio_1 .imgbox {float:left; width: 50%;}
+.portfolio_1 .textbox {float:right; width: 50%; padding-left: 5%;}
+
+.portfolio_2 {height: 700px; margin-top: 150px;}
+.portfolio_2::after {display: block; content:""; clear: both;}
+.portfolio_2 .imgbox {float:right; width: 50%;}
+.portfolio_2 .textbox {float:left; width: 50%; text-align: right; padding-right: 5%;}
+
+.portfolio_3 {height: 700px; margin-top: 150px;}
+.portfolio_3::after {display: block; content:""; clear: both;}
+.portfolio_3 .imgbox {float:left; width: 50%;}
+.portfolio_3 .textbox {float:right; width: 50%; padding-left: 5%;}
+
+.portfolio_4 {height: 700px; margin-top: 150px;}
+.portfolio_4::after {display: block; content:""; clear: both;}
+.portfolio_4 .imgbox {float:right; width: 50%; padding-left: 5%;}
+.portfolio_4 .textbox {float:left; width: 50%; text-align: right;}
+
+.t_txt {font-size: 30px; margin-top: 50px;}
+.s_txt {font-size: 26px; margin-top: 20px;}
+
+/*portfolio_more button*/
+button{
+  background:#02358c;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:20px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  font-family:  'Do Hyeon';
+  margin-top: 20px;
+}
+button:hover{
+  background:#fff;
+  color:#02358c;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;    
+  height:2px;
+  width:0;
+  background: #02358c;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+/*button_exit*/
+
+
+
+/*contact*/
+#contact {position: relative; width: 100%; margin: 0 auto; color: white; padding: 50px 0;}
+.contact_txt {text-align: center; font-size: 36px; padding: 20px 0;}
+.contact_info {text-align: center; padding-bottom: 60px;}
+.contact_info ul li {line-height: 30px; font-size: 22px;}
+
+
+
+
+/*media_query*/
+@media screen and (min-width:1280px) and (max-width:1400px){
+    #about {padding: 150px 0;}
+    .about_info {width: 100%;}
+    .about_img {width: 100%; margin-top: 20px;}
+    .about_img img {width: 100%;}
+    
+    
+}
+
+
+@media screen and (min-width:1024px) and (max-width:1279px){
+    #about {padding: 150px 0;}
+    .about_info {width: 100%;}
+    .about_img {width: 100%; margin-top: 20px;}
+    .about_img img {width: 100%;}
+    
+    .chart canvas {width: 150px !important; height: 150px !important;}
+    .skill_bar ul li .chart .percent {top: 47%;}
+    
+    #portfolio {padding-top: 100px;}
+    .portfolio_1 {height: 500px; margin-top: 100px;}
+    .portfolio_2 {height: 500px; margin-top: 100px;}
+    .portfolio_3 {height: 500px; margin-top: 100px;}
+    .portfolio_4 {height: 500px; margin-top: 100px;}
+}
+
+
+@media screen and (min-width:768px) and (max-width:1023px){
+    .container {width: 80%;}
+    #about {padding: 100px 0;}
+    .about_txt {width: 80%;}
+    .about_info {width: 100%;}
+    .about_img {width: 100%; margin-top: 20px;}
+    .about_img img {width: 100%;}   
+    .about_info h2 {font-size: 40px;}
+    
+    .chart canvas {width: 120px !important; height: 120px !important;}
+    .skill_bar ul li .chart .percent {top: 47%;}
+    
+     #portfolio {padding-top: 100px;}
+    .portfolio_txt h2 {font-size: 40px;}
+    .t_txt {font-size: 25px; margin-top: 15px;}
+    .s_txt {font-size: 21px; margin-top: 10px;}
+    .portfolio_1 {height: 400px; margin-top: 70px;}
+    .portfolio_2 {height: 400px; margin-top: 70px;}
+    .portfolio_3 {height: 400px; margin-top: 70px;}
+    .portfolio_4 {height: 400px; margin-top: 70px;} 
+    button{height:40px; font-size:16px;}
+    
+
+    .contact_txt {font-size: 25px; padding: 20px 0;}
+    .contact_info {text-align: center; padding-bottom: 60px;}
+    .contact_info ul li {line-height: 30px; font-size: 18px;}
+}
+
+
+@media screen and (min-width:320px) and (max-width:767px){
+    .container {width: 100%;}
+    .nav .nav_name {left:5%;}
+    .nav .nav_gnb {top: 50px; width: 100%; text-align: center;}
+    .nav .nav_gnb ul {width: 100%;}
+    .nav .nav_gnb ul li {display: none; width: 100%; padding-left: 0px; float: none;}
+    .m_menu {display: block; position: absolute; right: 5%; font-size: 30px; line-height: 50px; cursor: pointer;}
+    
+    #main {padding-top: 250px; padding-bottom: 250px;}
+    #main h2 {font-size: 50px;}
+    #main h3 {font-size: 28px;}
+    
+    #about {padding: 50px 0;}
+    .about_txt {width: 80%;}
+    .about_info {width: 100%;}
+    .about_img {width: 100%; margin-top: 20px;}
+    .about_img img {width: 100%;}   
+    .about_info h2 {font-size: 40px;}
+    
+    #skill {padding: 50px 0;}
+    .skill_txt h2 {font-size: 40px;}
+    .skill_bar {width: 90%; margin-top: 50px;}
+    .skill_bar ul li {width: 33.33%; font-size: 18px;}
+    .chart canvas {width: 100px !important; height: 100px !important;}
+    .skill_bar ul li .chart .percent {top: 47%; font-size: 26px;}
+    
+    
+    #portfolio {padding-top: 50px;}
+    .portfolio_txt h2 {font-size: 36px;}
+    .portfolio_box { width: 90%;}
+    .portfolio_1 {height: auto; margin-top: 70px;}
+    .portfolio_1::after {display: block; content:""; clear: both;}
+    .portfolio_1 .imgbox {float:none; width: 100%;}
+    .portfolio_1 .textbox {float:none; width: 100%; padding-left: 5%; height: 300px;}
+
+    .portfolio_2 {height: auto; margin-top: 70px;}
+    .portfolio_2::after {display: block; content:""; clear: both;}
+    .portfolio_2 .imgbox {float:none; width: 100%;}
+    .portfolio_2 .textbox {float:none; width: 100%; text-align: right; padding-right: 5%; height: 300px;}
+
+    .portfolio_3 {height: auto; margin-top: 70px;}
+    .portfolio_3::after {display: block; content:""; clear: both;}
+    .portfolio_3 .imgbox {float:none; width: 100%;}
+    .portfolio_3 .textbox {float:none; width: 100%; padding-left: 5%; height: 300px;}
+
+    .portfolio_4 {height: auto; margin-top: 70px;}
+    .portfolio_4::after {display: block; content:""; clear: both;}
+    .portfolio_4 .imgbox {float:none; width: 100%; padding-left: 5%;}
+    .portfolio_4 .textbox {float:none; width: 100%; text-align: right; height: 300px;}
+
+    .t_txt {font-size: 26px; margin-top: 50px;}
+    .s_txt {font-size: 22px; margin-top: 20px;}
+    
+    .contact_info ul li {line-height: 30px; font-size: 16px;}
+    
+}
+
+
+
+
+
+
+
+
