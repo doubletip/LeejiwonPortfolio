@@ -186,8 +186,8 @@ button:hover:before,button:hover:after{
     .container {width: 100%;}
     .nav .nav_name {left:5%;}
     .nav .nav_gnb {top: 50px; width: 100%; text-align: center;}
-    .nav .nav_gnb ul {width: 100%;}
-    .nav .nav_gnb ul li {display: none; width: 100%; padding-left: 0px; float: none;}
+    .nav .nav_gnb ul {width: 100%; display: none;}
+    .nav .nav_gnb ul li { width: 100%; padding-left: 0px; float: none;}
     .m_menu {display: block; position: absolute; right: 5%; font-size: 30px; line-height: 50px; cursor: pointer;}
     
     #main {padding-top: 250px; padding-bottom: 250px;}
